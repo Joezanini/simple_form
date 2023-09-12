@@ -13,20 +13,107 @@
       "webexConfigured": false
     },
     "area": {
-      "header":{
-        "id":"header",
-        "widgets":{
-           "head1":{
-              "comp":"app-button",
-              "script":"https://cdn.jsdelivr.net/gh/Joezanini/header_button/dist/bundle.js"
-           }
+      "persistent": [
+        {
+          "comp": "md-tab",
+          "attributes": {
+            "slot": "tab"
+          },
+          "children": [
+            {
+              "comp": "md-icon",
+              "attributes": {
+                "name": "emoticons_16"
+              }
+            },
+            {
+              "comp": "span",
+              "textContent": "Custom Page Widget"
+            }
+          ]
         },
-        "layout":{
-           "areas":[[ "head1" ]], 
-           "size": { "cols": [1], "rows": [1] } 
-           } 
-     },
-     "panel": {
+        {
+          "comp": "md-tab-panel",
+          "attributes": {
+            "slot": "panel"
+          },
+          "children": [
+            {
+              "comp": "dynamic-area",
+              "properties": {
+                "area": {
+                  "id": "dw-panel-two",
+                  "widgets": {
+                    "comp1": {
+                      "comp": "agentx-wc-iframe",
+                      "attributes": {
+                        "src": "https://blog.logrocket.com/the-ultimate-guide-to-iframes/"
+                      },
+                      "wrapper": {
+                        "title": "AgentX iFrame",
+                        "maximizeAreaName": "app-maximize-area"
+                      }
+                    },
+                    "comp2": {
+                      "comp": "uuip-widget-two",
+                      "script": "./dynamic-widgets/widget-two.js",
+                      "attributes": {
+                        "title": "WIDGET 2 content"
+                      },
+                      "wrapper": {
+                        "title": "Widget 2 title",
+                        "maximizeAreaName": "app-maximize-area"
+                      }
+                    }
+                  },
+                  "layout": {
+                    "areas": [
+                      [
+                        "comp1",
+                        "comp2"
+                      ]
+                    ],
+                    "size": {
+                      "cols": [
+                        1,
+                        1
+                      ],
+                      "rows": [
+                        1
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "header": {
+        "id": "header",
+        "widgets": {
+          "head1": {
+            "comp": "app-button",
+            "script": "https://cdn.jsdelivr.net/gh/Joezanini/header_button/dist/bundle.js"
+          }
+        },
+        "layout": {
+          "areas": [
+            [
+              "head1"
+            ]
+          ],
+          "size": {
+            "cols": [
+              1
+            ],
+            "rows": [
+              1
+            ]
+          }
+        }
+      },
+      "panel": {
         "comp": "md-tabs",
         "attributes": {
           "class": "widget-tabs"
@@ -194,10 +281,18 @@
               }
             },
             "layout": {
-              "areas": [["comp1"]],
+              "areas": [
+                [
+                  "comp1"
+                ]
+              ],
               "size": {
-                "cols": [1],
-                "rows": [1]
+                "cols": [
+                  1
+                ],
+                "rows": [
+                  1
+                ]
               }
             }
           },
@@ -205,34 +300,50 @@
         },
         {
           "nav": {
-            "label" : "Joe's Custom Page",
+            "label": "Joe's Custom Page",
             "icon": "https://cdn.jsdelivr.net/gh/Joezanini/simple_form/profilePic.png",
             "iconType": "other",
             "navigateTo": "joes-widget",
             "align": "top",
             "isDefaultLandingPage": true
           },
-          "page" : {
-            "id" : "joes-widget",
-            "widgets" : {
-              "comp1" : {
-                "comp" : "app-form",
-                "script" : "https://cdn.jsdelivr.net/gh/Joezanini/simple_form/dist/bundle.js",
-                "wrapper" : {
-                  "title" : "Joe's Custom Form",
-                  "maximizeAreaName" : "app-maximize-area"
+          "page": {
+            "id": "joes-widget",
+            "widgets": {
+              "comp1": {
+                "comp": "app-form",
+                "script": "https://cdn.jsdelivr.net/gh/Joezanini/simple_form/dist/bundle.js",
+                "wrapper": {
+                  "title": "Joe's Custom Form",
+                  "maximizeAreaName": "app-maximize-area"
+                }
+              },
+              "comp2": {
+                "comp": "agentx-wc-iframe",
+                "attributes": {
+                  "src": "https://quilted-icy-ounce.glitch.me/"
                 }
               }
             },
-            "layout" : {
-              "areas" : [["comp1"]],
-              "size" : {
-                "cols" : [1],
-                "rows" : [1]
+            "layout": {
+              "areas": [
+                [
+                  "comp1",
+                  "comp2"
+                ]
+              ],
+              "size": {
+                "cols": [
+                  1,
+                  1
+                ],
+                "rows": [
+                  1
+                ]
               }
+            }
           }
         }
-      }
       ]
     }
   },
@@ -676,10 +787,18 @@
               }
             },
             "layout": {
-              "areas": [["comp1"]],
+              "areas": [
+                [
+                  "comp1"
+                ]
+              ],
               "size": {
-                "cols": [1],
-                "rows": [1]
+                "cols": [
+                  1
+                ],
+                "rows": [
+                  1
+                ]
               }
             }
           },
@@ -1162,10 +1281,18 @@
               }
             },
             "layout": {
-              "areas": [["comp1"]],
+              "areas": [
+                [
+                  "comp1"
+                ]
+              ],
               "size": {
-                "cols": [1],
-                "rows": [1]
+                "cols": [
+                  1
+                ],
+                "rows": [
+                  1
+                ]
               }
             }
           },
